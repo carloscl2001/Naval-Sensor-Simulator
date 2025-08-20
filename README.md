@@ -14,6 +14,7 @@ Este proyecto es un **simulador de sensores navales** desarrollado en **C++ mode
 ---
 
 ## 📂 Estructura del proyecto
+```
 naval-sensor-simulator/
 │── src/
 │ ├── main.cpp
@@ -30,3 +31,4 @@ naval-sensor-simulator/
 │
 │── CMakeLists.txt
 │── README.md
+```
