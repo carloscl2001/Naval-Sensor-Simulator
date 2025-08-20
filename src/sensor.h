@@ -13,7 +13,7 @@ class Sensor {
 
     public:
         Sensor(const std::string& n, double minL, double maxL);
-        void generateValue();   // Simulación de lectura
+        void generateValue();   
         bool isAnomaly() const;
         double getValue() const;
         std::string getName() const;
