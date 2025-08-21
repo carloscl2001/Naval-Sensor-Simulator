@@ -18,15 +18,18 @@ This project is a **naval sensor simulator** developed in **modern C++**, replic
 naval-sensor-simulator/
 │── src/
 │ ├── main.cpp
-│ ├── sensor.h
+│ ├── observer.h
+│ ├── sensor_system.cpp
+│ ├── sensor_system.h
 │ ├── sensor.cpp
-│ ├── sensorSystem.h
-│ ├── sensorSystem.cpp
+│ ├── sensor.h
+│ ├── simulation_report.h
 │
 │── tests/
 │ ├── unit_test.cpp
 │ ├── integration_test.cpp
-│ 
+│
+│── sensors.json
 │── CMakeLists.txt
 │── README.md
 ```
