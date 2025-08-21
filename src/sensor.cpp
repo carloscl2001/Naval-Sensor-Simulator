@@ -27,6 +27,10 @@ double Sensor::getValue() const {
     return value;
 }
 
+void Sensor::setValue(double val) {
+    value = val;
+}
+
 std::string Sensor::getName() const {
     return name;
 }

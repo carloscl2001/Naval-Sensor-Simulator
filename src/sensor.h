@@ -57,6 +57,12 @@ public:
     double getValue() const;
 
     /**
+     * @brief Set the Value object  
+     * @param val 
+     */
+    void setValue(double val);
+
+    /**
      * @brief Gets the name of the sensor.
      * @return The name of the sensor.
      */
