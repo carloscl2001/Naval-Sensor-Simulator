@@ -1,39 +1,56 @@
 cmake_minimum_required(VERSION 3.10)
 project(NavalSensorSimulator)
 
-# Usar C++17
+# ----------------------------
+# General configuration
+# ----------------------------
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Añadir carpeta src
+# Include directories
 include_directories(src)
+include_directories(external/googletest/googletest/include)
 
-# Archivos fuente
+# ----------------------------
+# Project source files
+# ----------------------------
 set(SOURCES
     src/main.cpp
     src/sensor.cpp
     src/sensor_system.cpp
 )
 
-# Crear ejecutable principal
+# Main executable
 add_executable(NavalSimulator ${SOURCES})
 
-# --- TESTS ---
+# ----------------------------
+# GoogleTest
+# ----------------------------
 enable_testing()
-
-# Incluir GoogleTest como subdirectorio
 add_subdirectory(external/googletest)
-include_directories(external/googletest/googletest/include)
 
-set(TEST_SOURCES
-    tests/test_sensors.cpp
+# ----------------------------
+# Unit Tests
+# ----------------------------
+set(UNIT_TEST_SOURCES
+    tests/unit_test.cpp
     src/sensor.cpp
     src/sensor_system.cpp
 )
 
-add_executable(RunTests ${TEST_SOURCES})
+add_executable(UnitTests ${UNIT_TEST_SOURCES})
+target_link_libraries(UnitTests gtest gtest_main)
+add_test(NAME UnitTests COMMAND UnitTests)
 
-# Linkear con GTest (importante para Windows)
-target_link_libraries(RunTests gtest gtest_main)
+# ----------------------------
+# Integration Tests
+# ----------------------------
+set(INTEGRATION_TEST_SOURCES
+    tests/integration_test.cpp
+    src/sensor.cpp
+    src/sensor_system.cpp
+)
 
-add_test(NAME RunTests COMMAND RunTests)
+add_executable(IntegrationTests ${INTEGRATION_TEST_SOURCES})
+target_link_libraries(IntegrationTests gtest gtest_main)
+add_test(NAME IntegrationTests COMMAND IntegrationTests)
