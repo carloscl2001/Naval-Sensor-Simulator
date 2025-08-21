@@ -18,10 +18,10 @@ This project is a **naval sensor simulator** developed in **modern C++**, replic
 naval-sensor-simulator/
 │── src/
 │ ├── main.cpp
-│ ├── Sensor.h
-│ ├── Sensor.cpp
-│ ├── SensorSystem.h
-│ ├── SensorSystem.cpp
+│ ├── sensor.h
+│ ├── sensor.cpp
+│ ├── sensorSystem.h
+│ ├── sensorSystem.cpp
 │
 │── tests/
 │ ├── unit_test.cpp
