@@ -18,17 +18,22 @@ set(SOURCES
 # Crear ejecutable principal
 add_executable(NavalSimulator ${SOURCES})
 
-# --- TESTS DESACTIVADOS ---
-# enable_testing()
-# find_package(GTest REQUIRED)
-# include_directories(${GTEST_INCLUDE_DIRS})
-#
-# set(TEST_SOURCES
-#     tests/test_sensors.cpp
-#     src/Sensor.cpp
-#     src/SensorSystem.cpp
-# )
-#
-# add_executable(RunTests ${TEST_SOURCES})
-# target_link_libraries(RunTests ${GTEST_LIBRARIES} pthread)
-# add_test(NAME RunTests COMMAND RunTests)
+# --- TESTS ---
+enable_testing()
+
+# Incluir GoogleTest como subdirectorio
+add_subdirectory(external/googletest)
+include_directories(external/googletest/googletest/include)
+
+set(TEST_SOURCES
+    tests/test_sensors.cpp
+    src/sensor.cpp
+    src/sensor_system.cpp
+)
+
+add_executable(RunTests ${TEST_SOURCES})
+
+# Linkear con GTest (importante para Windows)
+target_link_libraries(RunTests gtest gtest_main)
+
+add_test(NAME RunTests COMMAND RunTests)

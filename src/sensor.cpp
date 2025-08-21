@@ -6,6 +6,7 @@
 #include "sensor.h"
 #include <cstdlib> 
 #include <ctime>   
+#include <iostream>
 
 Sensor::Sensor(const std::string& n, double minL, double maxL)
     : name(n), minLimit(minL), maxLimit(maxL) {
