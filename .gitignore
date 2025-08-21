@@ -1,0 +1,17 @@
+# Ignorar carpeta de compilación
+build/
+
+# Ignorar ejecutables generados en la raíz o en src
+*.exe
+*.out
+*.obj
+*.o
+
+# Ignorar archivos de CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+#Ignorar archivos de comandos
+comandos.txt
