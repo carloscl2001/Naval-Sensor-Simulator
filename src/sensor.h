@@ -1,10 +1,10 @@
 /**
- * @file Sensor.h
- * @brief Definición de la clase Sensor.
+ * @file sensor.h
+ * @brief Definition of the Sensor class.
  *
- * Esta clase simula un sensor que puede generar valores,
- * verificar si están dentro de un rango aceptable y
- * proporcionar información sobre sí mismo.
+ * This class simulates a sensor that can generate values,
+ * check if they are within an acceptable range, and
+ * provide information about itself.
  */
 
 #ifndef SENSOR_H
@@ -14,51 +14,51 @@
 
 /**
  * @class Sensor
- * @brief Clase para representar un sensor de datos.
+ * @brief A class to represent a data sensor.
  *
- * La clase Sensor permite simular el comportamiento de un sensor físico,
- * con la capacidad de generar valores aleatorios dentro de un rango,
- * detectar anomalías y almacenar propiedades como su nombre y límites.
+ * The Sensor class simulates the behavior of a physical sensor,
+ * with the ability to generate random values within a range,
+ * detect anomalies, and store properties like its name and limits.
  */
 class Sensor {
 private:
-    std::string name;     /**< @brief Nombre del sensor. */
-    double value;         /**< @brief Valor actual del sensor. */
-    double minLimit;      /**< @brief Límite inferior para el valor del sensor. */
-    double maxLimit;      /**< @brief Límite superior para el valor del sensor. */
+    std::string name;     /**< @brief The name of the sensor. */
+    double value;         /**< @brief The current value of the sensor. */
+    double minLimit;      /**< @brief The lower limit for the sensor's value. */
+    double maxLimit;      /**< @brief The upper limit for the sensor's value. */
 
 public:
     /**
-     * @brief Constructor de la clase Sensor.
-     * @param n Nombre del sensor.
-     * @param minL Límite mínimo aceptable.
-     * @param maxL Límite máximo aceptable.
+     * @brief Constructor for the Sensor class.
+     * @param n The name of the sensor.
+     * @param minL The minimum acceptable limit.
+     * @param maxL The maximum acceptable limit.
      */
     Sensor(const std::string& n, double minL, double maxL);
 
     /**
-     * @brief Genera un nuevo valor aleatorio para el sensor.
+     * @brief Generates a new random value for the sensor.
      *
-     * El valor generado es un número aleatorio entre minLimit y maxLimit * 1.5.
+     * The value generated is a random number between minLimit and maxLimit * 1.5.
      */
     void generateValue();
 
     /**
-     * @brief Verifica si el valor actual del sensor es una anomalía.
-     * @return true si el valor está fuera de los límites [minLimit, maxLimit],
-     * false en caso contrario.
+     * @brief Checks if the current sensor value is an anomaly.
+     * @return true if the value is outside the [minLimit, maxLimit] range,
+     * false otherwise.
      */
     bool isAnomaly() const;
 
     /**
-     * @brief Obtiene el valor actual del sensor.
-     * @return El valor numérico del sensor.
+     * @brief Gets the current sensor value.
+     * @return The numerical value of the sensor.
      */
     double getValue() const;
 
     /**
-     * @brief Obtiene el nombre del sensor.
-     * @return El nombre del sensor.
+     * @brief Gets the name of the sensor.
+     * @return The name of the sensor.
      */
     std::string getName() const;
 };
