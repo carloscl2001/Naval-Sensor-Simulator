@@ -23,6 +23,10 @@ naval-sensor-simulator/
 │ ├── SensorSystem.h
 │ ├── SensorSystem.cpp
 │
+│── tests/
+│ ├── unit_test.cpp
+│ ├── integration_test.cpp
+│ 
 │── CMakeLists.txt
 │── README.md
 ```
