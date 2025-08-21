@@ -1,0 +1,7 @@
+{
+  "sensors": [
+    {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
+    {"name": "Pressure", "min": 5, "max": 50, "noise": 0.03, "failureProbability": 0.1},
+    {"name": "Speed", "min": 0, "max": 40}
+  ]
+}

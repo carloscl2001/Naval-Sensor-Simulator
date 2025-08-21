@@ -1,40 +1,53 @@
-/**
- * @file sensor_system.cpp
- * @brief Implementation of the SensorSystem class methods.
- */
-
 #include "sensor_system.h"
+#include <fstream>
 #include <iostream>
+#include <nlohmann/json.hpp>
 
-// The constructor doesn't need additional documentation here since its purpose is simple and described in the .h file.
-SensorSystem::SensorSystem() {}
-
-// The addSensor method doesn't require extra documentation as its implementation is self-explanatory.
 void SensorSystem::addSensor(const Sensor& sensor) {
     sensors.push_back(sensor);
 }
 
-/**
- * @brief Runs a data reading simulation for all sensors.
- * @param cycles The number of simulation cycles to run.
- *
- * This method iterates for a predefined number of cycles. In each cycle,
- * it loops through all the sensors, calls their `generateValue` method,
- * and prints the value along with an alert if an anomaly is detected.
- */
-void SensorSystem::runSimulation(int cycles) {
-    for (int i = 0; i < cycles; i++) {
-        std::cout << "\n---------------| Cycle " << i + 1 << " |---------------\n";
+std::vector<SimulationReport> SensorSystem::runSimulation(int cycles) {
+    std::vector<SimulationReport> reports;
+
+    for (int i = 0; i < cycles; ++i) {
+        SimulationReport report;
+        report.cycle = i + 1;
+
         for (auto& sensor : sensors) {
             sensor.generateValue();
-            std::cout << sensor.getName() << " = " << sensor.getValue() << "-> ";
-            if (sensor.isAnomaly()) {
-                std::cout <<"ANOMALY DETECTED";
-            }else {
-                std::cout << "NORMAL VALUE";
-            }
-            std::cout << "\n";
+            report.sensorReports.push_back({sensor.getName(), sensor.getValue(), sensor.isAnomaly()});
         }
-        std::cout << "-----------------------------------------\n";
+
+        reports.push_back(report);
+    }
+    return reports;
+}
+
+void SensorSystem::loadFromJSON(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error al abrir archivo JSON\n";
+        return;
+    }
+
+    nlohmann::json j;
+    file >> j;
+
+    for (auto& s : j["sensors"]) {
+        std::string name = s["name"];
+        double min = s["min"];
+        double max = s["max"];
+        double noise = s.value("noise", 0.05);
+        double failProb = s.value("failureProbability", 0.05);
+
+        addSensor(Sensor(name, min, max, noise, failProb));
+    }
+}
+
+
+void SensorSystem::addObserverToAll(Observer* obs) {
+    for (auto& sensor : sensors) {
+        sensor.addObserver(obs);
     }
 }

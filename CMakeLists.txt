@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Include directories
 include_directories(src)
 include_directories(external/googletest/googletest/include)
+include_directories(external/json)
 
 # ----------------------------
 # Project source files

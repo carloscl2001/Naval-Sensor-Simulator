@@ -10,6 +10,7 @@
 #define SENSORSYSTEM_H
 
 #include "sensor.h"
+#include "simulation_report.h"
 #include <vector>
 
 /**
@@ -29,27 +30,14 @@ private:
     std::vector<Sensor> sensors;
 
 public:
-    /**
-     * @brief Default constructor for the SensorSystem class.
-     *
-     * Initializes an empty sensor system.
-     */
-    SensorSystem();
-
-    /**
-     * @brief Adds a sensor to the system.
-     * @param sensor The Sensor object to be added.
-     */
     void addSensor(const Sensor& sensor);
-
-    /**
-     * @brief Runs a data reading simulation for all sensors.
-     * @param cycles The number of simulation cycles to run.
-     *
-     * During each cycle, every sensor generates a new value, prints it
-     * to the console, and checks for an anomaly.
-     */
-    void runSimulation(int cycles);
+    
+    std::vector<SimulationReport> runSimulation(int cycles);
+    
+    void loadFromJSON(const std::string& filename);
+    
+    // Nuevo método para registrar un observador en todos los sensores
+    void addObserverToAll(Observer* obs);
 };
 
 #endif
