@@ -1,19 +1,19 @@
 # 🚢 Naval Sensor Simulator
 
-Este proyecto es un **simulador de sensores navales** desarrollado en **C++ moderno**, que reproduce un sistema básico de monitorización de sensores (temperatura, presión y velocidad).  
+This project is a **naval sensor simulator** developed in **modern C++**, replicating a basic sensor monitoring system (temperature, pressure, and speed).
 
 ---
 
-## ✨ Funcionalidades
-- Simulación de sensores con valores aleatorios.
-- Detección de anomalías cuando un valor excede los límites definidos.
-- Reporte por consola en ciclos de simulación.
-- Tests unitarios e integración con **Google Test**.
-- Proyecto modular con **CMake**.
+## ✨ Features
+- Simulates sensors with random values.
+- Detects anomalies when a value exceeds defined limits.
+- Console reporting during simulation cycles.
+- Unit and integration testing with **Google Test**.
+- Modular project structure with **CMake**.
 
 ---
 
-## 📂 Estructura del proyecto
+## 📂 Project Structure
 ```
 naval-sensor-simulator/
 │── src/
@@ -22,12 +22,6 @@ naval-sensor-simulator/
 │ ├── Sensor.cpp
 │ ├── SensorSystem.h
 │ ├── SensorSystem.cpp
-│
-│── tests/
-│ ├── test_sensors.cpp
-│
-│── docs/
-│ ├── test_matrix.md
 │
 │── CMakeLists.txt
 │── README.md
