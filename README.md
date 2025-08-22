@@ -9,6 +9,9 @@
 
 This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed, etc.).  
 
+![Naval Sensor Simulator GUI](docs/naval_simulator.gif)
+
+
 The system includes:
 
 - **Qt Widgets GUI** to display sensors in real-time.  
