@@ -101,3 +101,7 @@ cmake ..
 # Compile the project
 make
 ```
+
+---
+## ▶️ Execution
+
