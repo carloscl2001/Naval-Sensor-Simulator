@@ -1,10 +1,18 @@
 # 🚢 Naval Sensor Simulator
 
+[![C++](https://img.shields.io/badge/C%2B%2B-17-blue)](https://isocpp.org/) 
+[![CMake](https://img.shields.io/badge/CMake-3.16+-orange)](https://cmake.org/) 
+[![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/) 
+[![Tests](https://img.shields.io/badge/Tests-GoogleTest-brightgreen)](https://github.com/google/googletest)
+
 **Naval sensor simulator with anomaly detection and Qt visualization.**  
 
 This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed, etc.).  
 
-The system now includes:
+![Naval Sensor Simulator GUI](docs/naval_simulator.gif)
+
+
+The system includes:
 
 - **Qt Widgets GUI** to display sensors in real-time.  
 - Anomaly detection with visual highlighting in the table.  
@@ -31,9 +39,16 @@ This project reflects development in **engineering, defense, and naval sectors**
 ## 📂 Project Structure
 ```
 naval-sensor-simulator/
+│── build/
+|
+│── external/
+│ ├── googletest/
+│ ├── json/
+│ 
 │── src/
 │ ├── main.cpp
 │ ├── observer.h
+│ ├── qt_observer.h
 │ ├── sensor_system.cpp
 │ ├── sensor_system.h
 │ ├── sensor.cpp
@@ -59,6 +74,8 @@ naval-sensor-simulator/
 - **Qt6 (Widgets)**  
 - **CMake ≥ 3.16**  
 - **MinGW** (for Windows)
+- GoogleTest (for unit and integration tests)
+- nlohmann/json (for reading sensor configuration from JSON files)
 
 ### Building on Windows
 
@@ -72,4 +89,34 @@ cmake .. -G "MinGW Makefiles"
 
 # Compile the project
 mingw32-make
+```
 
+### Building on Linux
+
+```powershell
+#Navigate to the build directory (create it if it doesn't exist)
+mkdir -p ~/NavalSensorSimulator/build
+cd ~/NavalSensorSimulator/build
+
+# Generate build files
+cmake ..
+
+# Compile the project
+make
+```
+
+---
+## ▶️ Execution
+
+### Run the main application:
+```powershell
+./NavalSimulator
+```
+The Qt table updates in real time with each sensor's current value, highlighting anomalies.
+
+### Run the tests:
+```powershell
+./UnitTests
+./IntegrationTests
+```
+Tests validate sensor value generation, anomaly detection, and JSON configuration loading.
