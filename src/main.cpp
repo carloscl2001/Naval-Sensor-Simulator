@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) {
     // Crear ventana principal
     QWidget window;
     window.setWindowTitle("Sensor System Monitor");
+    window.resize(400, 600); // tamaño inicial
     window.setStyleSheet("background-color: #f5f5f5;");
 
     QVBoxLayout* layout = new QVBoxLayout(&window);
