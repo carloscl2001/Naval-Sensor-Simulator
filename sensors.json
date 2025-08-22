@@ -1,7 +1,44 @@
 {
   "sensors": [
-    {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
-    {"name": "Pressure", "min": 5, "max": 50, "noise": 0.03, "failureProbability": 0.1},
-    {"name": "Speed", "min": 0, "max": 40}
+    {
+      "name": "Engine_Temperature",
+      "min": 10,
+      "max": 80,
+      "noise": 0.05,
+      "failureProbability": 0.05
+    },
+    {
+      "name": "Engine_Pressure",
+      "min": 5,
+      "max": 50,
+      "noise": 0.03,
+      "failureProbability": 0.1
+    },
+    {
+      "name": "Speed_Knots",
+      "min": 0,
+      "max": 40
+    },
+    {
+      "name": "Rudder_Angle",
+      "min": -35,
+      "max": 35,
+      "noise": 0.01,
+      "failureProbability": 0.01
+    },
+    {
+      "name": "Fuel_Level",
+      "min": 0,
+      "max": 100,
+      "noise": 0.02,
+      "failureProbability": 0.01
+    },
+    {
+      "name": "Depth_Meters",
+      "min": 0.5,
+      "max": 1000,
+      "noise": 0.02,
+      "failureProbability": 0.01
+    }
   ]
 }
