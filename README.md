@@ -160,7 +160,7 @@ Checks individual components: Sensor, SensorSystem, and their methods.
 Validates system-level behavior: interaction of sensors, sensor system, and observers.
 
 ---
-## 🔮 Future Improvements
+## 💡 Future Improvements
 - Real-time charts using Qt Charts.
 - Export sensor data to CSV/JSON.
 - Advanced visual alerts for critical anomalies.
