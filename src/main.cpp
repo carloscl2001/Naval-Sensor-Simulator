@@ -11,39 +11,41 @@
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
-    // Estilo global
-    app.setStyleSheet(
-        "QWidget { background-color: #e6f2ff; }"
-        "QTableWidget { background-color: white; border: 1px solid #ccc; }"
-        "QHeaderView::section { background-color: #007acc; color: white; }"
-        "QListWidget { background-color: #f9f9f9; border: 1px solid #ccc; }"
-    );
-
     // Crear ventana principal
     QWidget window;
     window.setWindowTitle("Sensor System Monitor");
+    window.setStyleSheet("background-color: #f5f5f5;");
+
     QVBoxLayout* layout = new QVBoxLayout(&window);
-    layout->setContentsMargins(10,10,10,10);
-    layout->setSpacing(15);
 
     // Crear tabla
     QTableWidget* table = new QTableWidget();
     table->setColumnCount(2);
     table->setHorizontalHeaderLabels({"Sensor", "Value"});
-    table->setAlternatingRowColors(true);
     table->horizontalHeader()->setStretchLastSection(true);
+    table->setStyleSheet(
+        "QTableWidget {"
+        "  gridline-color: #ddd;"
+        "  font-size: 14px;"
+        "}"
+        "QHeaderView::section {"
+        "  background-color: #e0e0e0;"
+        "  font-weight: bold;"
+        "}"
+    );
     layout->addWidget(table);
 
     // Crear lista de anomalías
-    QListWidget* anomalyList = new QListWidget();
-    layout->addWidget(anomalyList);
+    QListWidget* anomaliesList = new QListWidget();
+    anomaliesList->setStyleSheet("font-size: 12px; color: darkred;");
+    layout->addWidget(anomaliesList);
 
     // Sistema de sensores
     SensorSystem system;
     system.loadFromJSON("../sensors.json");
 
     // Configurar observer Qt
-    QtObserver qtObs(table, anomalyList);
+    QtObserver qtObs(table, anomaliesList);
     table->setRowCount(system.getSensorCount());
     int row = 0;
     for (auto& sensorName : system.getSensorNames()) {
@@ -54,9 +56,9 @@ int main(int argc, char *argv[]) {
     // Simulación periódica
     QTimer timer;
     QObject::connect(&timer, &QTimer::timeout, [&]() {
-        system.runSimulationCycle();
+        system.runSimulationCycle(); // Método que solo ejecuta un ciclo
     });
-    timer.start(1000);
+    timer.start(1000); // cada 1 segundo
 
     window.show();
     return app.exec();
