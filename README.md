@@ -119,14 +119,14 @@ make
 
 
 ### Unit Tests
-```powershell
+```
 ./UnitTests
 ```
 Checks individual components: Sensor, SensorSystem, and their methods.
 
 
 ### Integration Tests
-```powershell
+```
 ./IntegrationTests
 ```
 Validates system-level behavior: interaction of sensors, sensor system, and observers.
