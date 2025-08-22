@@ -38,7 +38,7 @@ This project reflects development in **engineering, defense, and naval sectors**
 
 
 ## 📂 Project Structure
-```
+```bash
 naval-sensor-simulator/
 │── build/
 |
