@@ -1,6 +1,6 @@
-# Ignorar carpeta de compilación
-build/
-external/
+# # Ignorar carpeta de compilación
+# build/
+# external/
 
 # Ignorar ejecutables generados en la raíz o en src
 *.exe

@@ -1,32 +1,45 @@
+#include <QApplication>
+#include <QTableWidget>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QTimer>
 #include "sensor_system.h"
-#include "observer.h"
-#include <iostream>
+#include "qt_observer.h"
 
-int main() {
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    // Crear ventana principal
+    QWidget window;
+    window.setWindowTitle("Sensor System Monitor");
+    QVBoxLayout* layout = new QVBoxLayout(&window);
+
+    // Crear tabla
+    QTableWidget* table = new QTableWidget();
+    table->setColumnCount(2);
+    table->setHorizontalHeaderLabels({"Sensor", "Value"});
+    layout->addWidget(table);
+
+    // Sistema de sensores
     SensorSystem system;
-
-    // Cargamos sensores desde JSON
     system.loadFromJSON("../sensors.json");
 
-    // Creamos un observador de consola
-    ConsoleObserver consoleObs;
-
-    // Registramos el observador en todos los sensores
-    system.addObserverToAll(&consoleObs);
-
-    // Ejecutamos la simulación durante 5 ciclos
-    auto reports = system.runSimulation(5);
-
-    // Imprimimos resultados
-    for (const auto& cycleReport : reports) {
-        std::cout << "\n--- Cycle " << cycleReport.cycle << " ---\n";
-        for (const auto& sensorReport : cycleReport.sensorReports) {
-            std::cout << sensorReport.name << " = " << sensorReport.value;
-            if (sensorReport.anomaly) std::cout << " -> ANOMALY DETECTED";
-            else std::cout << " -> NORMAL VALUE";
-            std::cout << "\n";
-        }
+    // Configurar observer Qt
+    QtObserver qtObs(table);
+    table->setRowCount(system.getSensorCount());
+    int row = 0;
+    for (auto& sensorName : system.getSensorNames()) {
+        qtObs.registerSensor(sensorName, row++);
     }
+    system.addObserverToAll(&qtObs);
 
-    return 0;
+    // Simulación periódica
+    QTimer timer;
+    QObject::connect(&timer, &QTimer::timeout, [&]() {
+        system.runSimulationCycle(); // Método que solo ejecuta un ciclo
+    });
+    timer.start(1000); // cada 1 segundo
+
+    window.show();
+    return app.exec();
 }

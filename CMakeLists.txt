@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(NavalSensorSimulator)
 
 # ----------------------------
@@ -7,7 +7,17 @@ project(NavalSensorSimulator)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# ----------------------------
+# Qt configuration
+# ----------------------------
+# Ajusta esta ruta a tu instalación de Qt
+set(CMAKE_PREFIX_PATH "D:/Qt/6.5.2/mingw_64/lib/cmake")
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+# ----------------------------
 # Include directories
+# ----------------------------
 include_directories(src)
 include_directories(external/googletest/googletest/include)
 include_directories(external/json)
@@ -21,8 +31,9 @@ set(SOURCES
     src/sensor_system.cpp
 )
 
-# Main executable
+# Main executable (con Qt)
 add_executable(NavalSimulator ${SOURCES})
+target_link_libraries(NavalSimulator Qt6::Widgets)
 
 # ----------------------------
 # GoogleTest

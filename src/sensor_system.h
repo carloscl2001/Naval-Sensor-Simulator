@@ -38,6 +38,11 @@ public:
     
     // Nuevo método para registrar un observador en todos los sensores
     void addObserverToAll(Observer* obs);
+
+    int getSensorCount() const { return sensors.size(); }
+    std::vector<std::string> getSensorNames() const;
+
+    void runSimulationCycle(); // Ejecuta un ciclo y notifica a observadores
 };
 
 #endif

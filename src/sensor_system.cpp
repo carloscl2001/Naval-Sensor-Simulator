@@ -51,3 +51,15 @@ void SensorSystem::addObserverToAll(Observer* obs) {
         sensor.addObserver(obs);
     }
 }
+
+std::vector<std::string> SensorSystem::getSensorNames() const {
+    std::vector<std::string> names;
+    for (const auto& s : sensors) names.push_back(s.getName());
+    return names;
+}
+
+void SensorSystem::runSimulationCycle() {
+    for (auto& sensor : sensors) {
+        sensor.generateValue();
+    }
+}
