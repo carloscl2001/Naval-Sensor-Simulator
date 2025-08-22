@@ -9,7 +9,7 @@
 
 This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed).  
 
-![Naval Sensor Simulator GUI](docs/naval_simulator.gif)
+![Naval Sensor Simulator GUI](docs/naval_simulator.gif "Real-time sensor simulation and anomaly detection")
 
 
 The system includes:
