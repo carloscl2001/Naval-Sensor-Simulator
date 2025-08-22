@@ -64,6 +64,8 @@ naval-sensor-simulator/
 - **Qt6 (Widgets)**  
 - **CMake ≥ 3.16**  
 - **MinGW** (for Windows)
+- GoogleTest (for unit and integration tests)
+- nlohmann/json (for reading sensor configuration from JSON files)
 
 ### Building on Windows
 
