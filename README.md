@@ -130,3 +130,28 @@ Checks individual components: Sensor, SensorSystem, and their methods.
 ./IntegrationTests
 ```
 Validates system-level behavior: interaction of sensors, sensor system, and observers.
+
+
+----
+## ⚙️ Sensor Configuration
+
+You can configure the sensors by editing the sensors.json file. Each sensor has the following parameters:
+
+Field	Description	Example
+name	Sensor name	"Temperature"
+min	Minimum acceptable value	-10
+max	Maximum acceptable value	50
+noise	Random noise level (0 to 1)	0.05
+failureProbability	Chance of sensor failure per cycle (0 to 1)	0.02
+
+```powershell
+{
+  "sensors": [
+    {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
+    {"name": "Pressure", "min": 5, "max": 50, "noise": 0.03, "failureProbability": 0.1},
+    {"name": "Speed", "min": 0, "max": 40}
+  ]
+}
+```
+
+
