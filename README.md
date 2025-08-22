@@ -68,8 +68,32 @@ naval-sensor-simulator/
 │── LICENCE
 │── README.md
 ```
-
 ---
+## ⚙️ Sensor Configuration (sensors.json)
+
+The simulation parameters are loaded from the sensors.json file.
+
+Each sensor has the following parameters:
+
+| Field | Description | Example |
+|---|---|---|
+| `name` | Sensor name | "Temperature" |
+| `min` | Minimum acceptable value | 10 |
+| `max` | Maximum acceptable value | 80 |
+| `noise` | Random noise level (0 to 1) | 0.05 |
+| `failureProbability` | Chance of sensor failure per cycle (0 to 1) | 0.05 |
+
+This allows for easy and flexible configuration of the sensors without recompiling the code.
+
+```json
+{
+  "sensors": [
+    {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
+    {"name": "Pressure", "min": 5, "max": 50, "noise": 0.03, "failureProbability": 0.1},
+    {"name": "Speed", "min": 0, "max": 40}
+  ]
+}
+```
 
 ## 🛠 Installation and Build
 
@@ -133,34 +157,6 @@ Checks individual components: Sensor, SensorSystem, and their methods.
 ./IntegrationTests
 ```
 Validates system-level behavior: interaction of sensors, sensor system, and observers.
-
-
-----
-## ⚙️ Sensor Configuration (sensors.json)
-
-The simulation parameters are loaded from the sensors.json file.
-
-Each sensor has the following parameters:
-
-| Field | Description | Example |
-|---|---|---|
-| `name` | Sensor name | "Temperature" |
-| `min` | Minimum acceptable value | 10 |
-| `max` | Maximum acceptable value | 80 |
-| `noise` | Random noise level (0 to 1) | 0.05 |
-| `failureProbability` | Chance of sensor failure per cycle (0 to 1) | 0.05 |
-
-This allows for easy and flexible configuration of the sensors without recompiling the code.
-
-```json
-{
-  "sensors": [
-    {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
-    {"name": "Pressure", "min": 5, "max": 50, "noise": 0.03, "failureProbability": 0.1},
-    {"name": "Speed", "min": 0, "max": 40}
-  ]
-}
-```
 
 ---
 ## 🔮 Future Improvements
