@@ -136,13 +136,13 @@ Validates system-level behavior: interaction of sensors, sensor system, and obse
 ## ⚙️ Sensor Configuration
 
 You can configure the sensors by editing the sensors.json file. Each sensor has the following parameters:
-
-Field	Description	Example
-name	Sensor name	"Temperature"
-min	Minimum acceptable value	-10
-max	Maximum acceptable value	50
-noise	Random noise level (0 to 1)	0.05
-failureProbability	Chance of sensor failure per cycle (0 to 1)	0.02
+| Field | Description | Example |
+|---|---|---|
+| `name` | Sensor name | "Temperature" |
+| `min` | Minimum acceptable value | -10 |
+| `max` | Maximum acceptable value | 50 |
+| `noise` | Random noise level (0 to 1) | 0.05 |
+| `failureProbability` | Chance of sensor failure per cycle (0 to 1) | 0.02 |
 
 ```powershell
 {
