@@ -80,7 +80,7 @@ naval-sensor-simulator/
 
 ### Building on Windows
 
-```powershell
+```
 # Go to the build directory
 D:
 cd D:\Repositories\NavalSensorSimulator\build
@@ -94,7 +94,7 @@ mingw32-make
 
 ### Building on Linux
 
-```powershell
+```
 #Navigate to the build directory (create it if it doesn't exist)
 mkdir -p ~/NavalSensorSimulator/build
 cd ~/NavalSensorSimulator/build
@@ -110,7 +110,7 @@ make
 ## ▶️ Execution
 
 ### Main Application
-```bash
+```
 ./NavalSimulator
 ```
 - Runs the GUI and main sensor simulation.
@@ -149,7 +149,7 @@ Each sensor has the following parameters:
 
 This allows for easy and flexible configuration of the sensors without recompiling the code.
 
-```powershell
+```json
 {
   "sensors": [
     {"name": "Temperature", "min": 10, "max": 80, "noise": 0.05, "failureProbability": 0.05},
