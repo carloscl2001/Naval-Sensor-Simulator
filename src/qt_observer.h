@@ -19,7 +19,9 @@ public:
 
     void registerSensor(const std::string& name, int row) {
         rowMap[name] = row;
-        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(name)));
+        QTableWidgetItem* item = new QTableWidgetItem(QString::fromStdString(name));
+        item->setTextAlignment(Qt::AlignCenter); // Centrar el nombre del sensor
+        table->setItem(row, 0, item);
     }
 
     void update(const std::string& sensorName, double value, bool anomaly) override {
