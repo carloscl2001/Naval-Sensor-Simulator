@@ -42,6 +42,9 @@ This project reflects development in **engineering, defense, and naval sectors**
 naval-sensor-simulator/
 │── build/
 |
+│── docs/
+│ ├── naval_simulator.gif
+|
 │── external/
 │ ├── googletest/
 │ ├── json/
