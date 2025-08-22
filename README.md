@@ -142,10 +142,10 @@ Each sensor has the following parameters:
 | Field | Description | Example |
 |---|---|---|
 | `name` | Sensor name | "Temperature" |
-| `min` | Minimum acceptable value | -10 |
-| `max` | Maximum acceptable value | 50 |
+| `min` | Minimum acceptable value | 10 |
+| `max` | Maximum acceptable value | 80 |
 | `noise` | Random noise level (0 to 1) | 0.05 |
-| `failureProbability` | Chance of sensor failure per cycle (0 to 1) | 0.02 |
+| `failureProbability` | Chance of sensor failure per cycle (0 to 1) | 0.05 |
 
 This allows for easy and flexible configuration of the sensors without recompiling the code.
 
