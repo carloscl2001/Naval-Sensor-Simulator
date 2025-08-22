@@ -82,3 +82,13 @@ cmake .. -G "MinGW Makefiles"
 # Compile the project
 mingw32-make
 
+### Building on Linux
+#Navigate to the build directory (create it if it doesn't exist)
+mkdir -p ~/NavalSensorSimulator/build
+cd ~/NavalSensorSimulator/build
+
+# Generate build files
+cmake ..
+
+# Compile the project
+make
