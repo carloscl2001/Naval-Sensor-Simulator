@@ -109,7 +109,7 @@ make
 ---
 ## ▶️ Execution
 
-### Run the main application:
+### Main Application
 ```powershell
 ./NavalSimulator
 ```
