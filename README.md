@@ -113,11 +113,20 @@ make
 ```powershell
 ./NavalSimulator
 ```
-The Qt table updates in real time with each sensor's current value, highlighting anomalies.
+- Runs the GUI and main sensor simulation.
+- The Qt table updates in real time with each sensor's value.
+- Anomalies are highlighted visually.
 
-### Run the tests:
+
+### Unit Tests
 ```powershell
 ./UnitTests
+```
+Checks individual components: Sensor, SensorSystem, and their methods.
+
+
+### Integration Tests
+```powershell
 ./IntegrationTests
 ```
-Tests validate sensor value generation, anomaly detection, and JSON configuration loading.
+Validates system-level behavior: interaction of sensors, sensor system, and observers.
