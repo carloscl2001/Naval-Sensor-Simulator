@@ -4,6 +4,7 @@
 [![CMake](https://img.shields.io/badge/CMake-3.16+-orange)](https://cmake.org/) 
 [![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/) 
 [![Tests](https://img.shields.io/badge/Tests-GoogleTest-brightgreen)](https://github.com/google/googletest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Naval sensor simulator with anomaly detection and Qt visualization.**  
 
