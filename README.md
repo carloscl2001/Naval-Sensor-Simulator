@@ -21,8 +21,6 @@ The system includes:
 - Simulation cycles with random values, noise, drift, and random failures.  
 - **Unit and integration tests** with GoogleTest.  
 
-This project reflects development in **engineering, defense, and naval sectors**, where reliability, thorough testing, and configuration control are essential.
-
 ---
 
 ## ✨ Current Features
