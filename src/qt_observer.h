@@ -28,6 +28,9 @@ public:
 
         QTableWidgetItem* item = new QTableWidgetItem(valStr);
 
+        // Centrar el valor en la celda
+        item->setTextAlignment(Qt::AlignCenter);
+
         if (anomaly) {
             item->setBackground(Qt::red);
             item->setToolTip("Value exceeds threshold!");
@@ -40,6 +43,7 @@ public:
 
         table->setItem(row, 1, item);
     }
+
 };
 
 #endif
