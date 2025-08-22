@@ -1,5 +1,10 @@
 # 🚢 Naval Sensor Simulator
 
+[![C++](https://img.shields.io/badge/C%2B%2B-17-blue)](https://isocpp.org/) 
+[![CMake](https://img.shields.io/badge/CMake-3.16+-orange)](https://cmake.org/) 
+[![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/) 
+[![Tests](https://img.shields.io/badge/Tests-GoogleTest-brightgreen)](https://github.com/google/googletest)
+
 **Naval sensor simulator with anomaly detection and Qt visualization.**  
 
 This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed, etc.).  
