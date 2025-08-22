@@ -94,6 +94,7 @@ This allows for easy and flexible configuration of the sensors without recompili
   ]
 }
 ```
+---
 
 ## 🛠 Installation and Build
 
