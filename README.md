@@ -110,7 +110,7 @@ make
 ## ▶️ Execution
 
 ### Main Application
-```powershell
+```bash
 ./NavalSimulator
 ```
 - Runs the GUI and main sensor simulation.
