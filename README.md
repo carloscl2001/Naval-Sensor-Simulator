@@ -160,3 +160,15 @@ This allows for easy and flexible configuration of the sensors without recompili
   ]
 }
 ```
+
+---
+## 🔮 Future Improvements
+- Real-time charts using Qt Charts.
+- Export sensor data to CSV/JSON.
+- Advanced visual alerts for critical anomalies.
+- Correlation analysis between multiple sensors.
+- Support for hundreds of sensors using QAbstractTableModel.
+
+---
+## 📄 License
+This project is licensed under the MIT License. See LICENSE for details.
