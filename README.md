@@ -31,6 +31,8 @@ This project reflects development in **engineering, defense, and naval sectors**
 ## 📂 Project Structure
 ```
 naval-sensor-simulator/
+│── build/
+|
 │── external/
 │ ├── googletest/
 │ ├── json/
