@@ -133,9 +133,10 @@ Validates system-level behavior: interaction of sensors, sensor system, and obse
 
 
 ----
-## ⚙️ Sensor Configuration
+## ⚙️ Sensor Configuration (sensors.json)
 
-You can configure the sensors by editing the sensors.json file. Each sensor has the following parameters:
+The simulation parameters are loaded from the sensors.json file. This allows for easy and flexible configuration of the sensors without recompiling the code.
+
 | Field | Description | Example |
 |---|---|---|
 | `name` | Sensor name | "Temperature" |
