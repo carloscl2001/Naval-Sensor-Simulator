@@ -18,7 +18,7 @@ This project reflects development in **engineering, defense, and naval sectors**
 
 ## ✨ Current Features
 
-- Sensor simulation with random values, noise, and cumulative drift.  
+- Sensor simulation with random values, noise, drift and failure probability.  
 - Anomaly detection when a value exceeds defined limits.  
 - **Real-time visualization using Qt**, highlighting anomalies in the table.  
 - Extensible **observer system** (console, file, GUI).  
