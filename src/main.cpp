@@ -22,6 +22,8 @@ int main(int argc, char *argv[]) {
     QTableWidget* table = new QTableWidget();
     table->setColumnCount(2);
     table->setHorizontalHeaderLabels({"Sensor", "Value"});
+    table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
     table->horizontalHeader()->setStretchLastSection(true);
     table->setStyleSheet(
         "QTableWidget {"
