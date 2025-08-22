@@ -65,6 +65,7 @@ naval-sensor-simulator/
 │
 │── sensors.json
 │── CMakeLists.txt
+│── LICENCE
 │── README.md
 ```
 
