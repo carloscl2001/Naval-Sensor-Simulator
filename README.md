@@ -4,7 +4,7 @@
 
 This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed, etc.).  
 
-The system now includes:
+The system includes:
 
 - **Qt Widgets GUI** to display sensors in real-time.  
 - Anomaly detection with visual highlighting in the table.  
