@@ -82,8 +82,7 @@ naval-sensor-simulator/
 
 ```
 # Go to the build directory
-D:
-cd D:\Repositories\NavalSensorSimulator\build
+cd build
 
 # Generate build files
 cmake .. -G "MinGW Makefiles"
@@ -158,5 +157,3 @@ This allows for easy and flexible configuration of the sensors without recompili
   ]
 }
 ```
-
-
