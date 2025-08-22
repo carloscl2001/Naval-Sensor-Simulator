@@ -31,9 +31,14 @@ This project reflects development in **engineering, defense, and naval sectors**
 ## 📂 Project Structure
 ```
 naval-sensor-simulator/
+│── external/
+│ ├── googletest/
+│ ├── json/
+│ 
 │── src/
 │ ├── main.cpp
 │ ├── observer.h
+│ ├── qt_observer.h
 │ ├── sensor_system.cpp
 │ ├── sensor_system.h
 │ ├── sensor.cpp
