@@ -48,3 +48,28 @@ naval-sensor-simulator/
 │── CMakeLists.txt
 │── README.md
 ```
+
+---
+
+## 🛠 Installation and Build
+
+### Requirements
+
+- **C++17**  
+- **Qt6 (Widgets)**  
+- **CMake ≥ 3.16**  
+- **MinGW** (for Windows)
+
+### Building on Windows
+
+```powershell
+# Go to the build directory
+D:
+cd D:\Repositories\NavalSensorSimulator\build
+
+# Generate build files
+cmake .. -G "MinGW Makefiles"
+
+# Compile the project
+mingw32-make
+
