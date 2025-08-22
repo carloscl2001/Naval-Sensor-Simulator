@@ -105,3 +105,15 @@ make
 ---
 ## ▶️ Execution
 
+### Run the main application:
+```powershell
+./NavalSimulator
+```
+The Qt table updates in real time with each sensor's current value, highlighting anomalies.
+
+### Run the tests:
+```powershell
+./UnitTests
+./IntegrationTests
+```
+Tests validate sensor value generation, anomaly detection, and JSON configuration loading.
