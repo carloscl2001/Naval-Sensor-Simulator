@@ -1,5 +1,7 @@
 # 🚢 Naval Sensor Simulator
 
+![Logo del Simulador de Sensores Navales](docs/logo.png)
+
 [![C++](https://img.shields.io/badge/C%2B%2B-17-blue)](https://isocpp.org/) 
 [![CMake](https://img.shields.io/badge/CMake-3.16+-orange)](https://cmake.org/) 
 [![Qt](https://img.shields.io/badge/Qt-6-green)](https://www.qt.io/) 
