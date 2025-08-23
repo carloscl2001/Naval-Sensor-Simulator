@@ -8,7 +8,7 @@
 
 **Naval sensor simulator with anomaly detection and Qt visualization.**  
 
-This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed).  
+This project is developed in **C++17** and simulates a basic sensor monitoring system (temperature, pressure, speed, etc....).  
 
 ![Naval Sensor Simulator GUI](docs/naval_simulator.gif "Real-time sensor simulation and anomaly detection")
 
